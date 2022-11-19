@@ -1,19 +1,18 @@
 const express = require('express')
 
 const cors = require('cors');
-
+require('dotenv').config()
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
-// Where we will keep books
-let books = [];
+
 
 app.use(cors());
 
 
 app.use(express.json());
 
-app.get('/Mascotas', (req, res) => {
+app.get('/mascotas', (req, res) => {
     return res.json(
         {
             data: [
@@ -43,7 +42,7 @@ app.get('/Mascotas', (req, res) => {
 
                     Color: "Cafe",
 
-                    Propietario: "Diego correa Cardenas"
+                    Propietario: "Diego correa"
 
                 }
 
